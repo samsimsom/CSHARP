@@ -5,10 +5,30 @@ using static System.Console;
 
 namespace PeopleApp
 {
+    public class TextAndNumber
+    {
+        public string Text;
+        public int Number;
+    }
+
+    public class Processor
+    {
+        public TextAndNumber GetTheData()
+        {
+            return new TextAndNumber
+            {
+                Text = "What's the meaning of life?",
+                Number = 42
+            };
+        }
+    }
+    
     class Program
     {
         static void Main(string[] args)
         {
+            Clear();
+            
             WriteLine("-- People App --");
 
             var bob = new Person();
@@ -64,6 +84,42 @@ namespace PeopleApp
                 arg0: gunny.Name,
                 arg1: gunny.HomePlanet,
                 arg2: gunny.Instantiated);
+            
+            // Defauls
+            var thingOfDefault = new ThingOfDefaults();
+            WriteLine("Default Values");
+            WriteLine($"{thingOfDefault.Population} - {thingOfDefault.When} - " +
+                      $"{thingOfDefault.Name} - {thingOfDefault.People}");
+            
+            
+            // METHOD CALL
+            bob.WriteToConsole();
+            WriteLine(bob.GetOrigin());
+            
+            WriteLine(new string('-', 35));
+            
+            // Return Value
+            var toReturn = new Processor();
+            var result = toReturn.GetTheData();
+            WriteLine(result.Text);
+            WriteLine(result.Number);
+            
+            WriteLine(new string('-', 35));
+
+            (string, int) fruit = bob.GetFruit();
+            WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+            
+            WriteLine(new string('-', 35));
+
+            var thing1 = ("Neville", 4);
+            var thing2 = (bob.Name, bob.Children.Count);
+            WriteLine($"ThingOne = {thing1.Item1} has {thing1.Item2} children.");
+            WriteLine($"ThingTwo = {thing2.Name} has {thing2.Count} children.");
+            
+            WriteLine(new string('-', 35));
+
+            (string name, int age) deconstruct = bob.GetPerson();
+            WriteLine($"{deconstruct.name} is {deconstruct.age} yeas old!");
         }
     }
 }

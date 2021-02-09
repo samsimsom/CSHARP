@@ -80,6 +80,11 @@ namespace Packt.Shared
             return $"{Name}'s says 'go fuck your self! {name}";
         }
 
+        public string SaySomething(string text)
+        {
+            return $"{text}";
+        }
+
         // ---------------------------------------------------------------------
 
 

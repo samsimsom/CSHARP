@@ -125,6 +125,7 @@ namespace PeopleApp
             WriteLine(bob.SayHello("Deve"));
             WriteLine(bob.SayHelloTo("Firat"));
             WriteLine(gunny.DirtyTalk("Zombi"));
+            WriteLine(gunny.SaySomething("Blah Blash!"));
 
             WriteLine();
         }

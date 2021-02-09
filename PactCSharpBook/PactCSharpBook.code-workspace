@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "Chapter05\\PeopleApp"
+		},
+		{
+			"path": "Chapter05\\PacktLibrary"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.gitignore": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/__pycache__": true,
+			"**/.vscode": false,
+			"**/.idea": true
+		},
+	}
+}

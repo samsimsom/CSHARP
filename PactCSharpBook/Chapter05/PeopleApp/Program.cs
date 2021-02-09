@@ -120,6 +120,13 @@ namespace PeopleApp
 
             (string name, int age) deconstruct = bob.GetPerson();
             WriteLine($"{deconstruct.name} is {deconstruct.age} yeas old!");
+
+            WriteLine(new string('-', 35));
+            WriteLine(bob.SayHello("Deve"));
+            WriteLine(bob.SayHelloTo("Firat"));
+            WriteLine(gunny.DirtyTalk("Zombi"));
+
+            WriteLine();
         }
     }
 }

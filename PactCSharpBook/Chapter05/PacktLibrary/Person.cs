@@ -1,25 +1,26 @@
 ﻿
 using System;
-using static System.Console;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace Packt.Shared
 {
     public class Person : object
     {
-        // Fields
+        // FIELD & PROPERTY
+        // ---------------------------------------------------------------------
         public string Name;
         public DateTime DateOfBirth;
         public List<Person> Children = new List<Person>();
-        
-        // Constant
-        public const string Species = "Homo Sapien";
-        
-        // read-only
-        public readonly string HomePlanet = "Earth";
+        public const string Species = "Homo Sapien";                // Constant
+        public readonly string HomePlanet = "Earth";                // read-only
         public readonly DateTime Instantiated;
+        // ---------------------------------------------------------------------
 
-        public Person()             // constructors
+
+        // CONSTRTUCTOR
+        // ---------------------------------------------------------------------
+        public Person()
         {
             // set default value for fields
             // including read only fiels
@@ -34,8 +35,11 @@ namespace Packt.Shared
             HomePlanet = homePlanet;
             Instantiated = DateTime.Now;
         }
-        
-        // METHODS
+        // ---------------------------------------------------------------------
+
+
+        // METHOD
+        // ---------------------------------------------------------------------
         public void WriteToConsole()
         {
             WriteLine($"{Name} was born on {DateOfBirth:dddd}.");
@@ -55,6 +59,29 @@ namespace Packt.Shared
         {
             return (Name, DateTime.Now.Year - DateOfBirth.Year);
         }
-        
+
+        public string SayHello()
+        {
+            return $"{Name}'s says 'Hello!'";
+        }
+
+        public string SayHello(string name)
+        {
+            return $"Hello {name}";
+        }
+
+        public string SayHelloTo(string name)
+        {
+            return $"{Name}'s says 'Hello {name}!'";
+        }
+
+        public string DirtyTalk(string name)
+        {
+            return $"{Name}'s says 'go fuck your self! {name}";
+        }
+
+        // ---------------------------------------------------------------------
+
+
     }
 }

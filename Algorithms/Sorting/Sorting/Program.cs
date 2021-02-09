@@ -34,6 +34,11 @@ namespace Sorting
             bubble.BubbleSort(data);
             helper.LineSeperator();
 
+            // Selection Sorting Algorithm
+            var selection = new Selection();
+            selection.SelectionSort(data);
+            helper.LineSeperator();
+
         }
     }
 }

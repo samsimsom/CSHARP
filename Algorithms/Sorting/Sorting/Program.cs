@@ -1,14 +1,14 @@
-﻿using System;
-using VisualUtils;
+﻿
+using Helper;
 using static System.Console;
 
-namespace SortingAlgorithms
+namespace Sorting
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var helper = new Helper();
+            var helper = new Visual();
             
             helper.CleanScreen();
             WriteLine("-- Sorting Algorithms --");

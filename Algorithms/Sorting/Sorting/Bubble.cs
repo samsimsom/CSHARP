@@ -1,11 +1,10 @@
-﻿
-using Exchange;
+
 using System.Diagnostics;
 using System;
 using System.Linq;
 using static System.Console;
 
-namespace SortingAlgorithms
+namespace Sorting
 {
     public class Bubble
     {
@@ -33,7 +32,7 @@ namespace SortingAlgorithms
                 {
                     if (shuffeldData[i] > shuffeldData[i + 1])
                     {
-                        exchange.ExchageValues(shuffeldData, i, i + 1);
+                        exchange.ExchageInt(shuffeldData, i, i + 1);
                     }
                 }
             }

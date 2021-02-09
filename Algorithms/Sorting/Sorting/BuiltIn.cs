@@ -1,11 +1,10 @@
 
-using Exchange;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using static System.Console;
 
-namespace SortingAlgorithms
+namespace Sorting
 {
     public class BuiltIn
     {

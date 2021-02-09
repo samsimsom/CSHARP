@@ -1,17 +1,16 @@
-﻿
+
 using Exchange;
-using System.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using static System.Console;
 
 namespace SortingAlgorithms
 {
-    public class Bubble
+    public class BuiltIn
     {
-        public void BubbleSort(int[] data)
+        public void BuiltInSort(int[] data)
         {
-
             var rnd = new Random();
             int[] shuffeldData = data.OrderBy(x => rnd.Next()).ToArray();
 
@@ -19,30 +18,19 @@ namespace SortingAlgorithms
             var stopWatch = new Stopwatch();
 
             ForegroundColor = ConsoleColor.Blue;
-            WriteLine("BEFORE Bubble Sorting :");
+            WriteLine("BEFORE Built-in Sorting :");
             WriteLine(string.Join('-', shuffeldData));
             ResetColor();
 
             stopWatch.Start();
-            // Bubble Sorting START
-            int i, j;
-            int dataLenght = shuffeldData.Length;
-            for (j = dataLenght - 1; j > 0; j--)
-            {
-                for (i = 0; i < j; i++)
-                {
-                    if (shuffeldData[i] > shuffeldData[i + 1])
-                    {
-                        exchange.ExchageValues(shuffeldData, i, i + 1);
-                    }
-                }
-            }
-            // Bubble Sorting END
+            // Built-in Sort START
+            Array.Sort(shuffeldData);
+            // Built-in sort END
             stopWatch.Stop();
-            
+
             WriteLine();
             ForegroundColor = ConsoleColor.Green;
-            WriteLine("AFTER Bubble Sorting :");
+            WriteLine("AFTER Built-in Sorting :");
             WriteLine(string.Join("-", shuffeldData));
             ResetColor();
             
@@ -50,7 +38,6 @@ namespace SortingAlgorithms
             ForegroundColor = ConsoleColor.Red;
             WriteLine($"Time elapsed : {stopWatch.Elapsed}");
             ResetColor();
-        
         }
     }
 }

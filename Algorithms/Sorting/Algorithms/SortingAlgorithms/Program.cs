@@ -23,7 +23,11 @@ namespace SortingAlgorithms
 
             var bubble = new Bubble();
             bubble.BubbleSort(data);
+            helper.LineSeperator();
 
+            var builtinShort = new BuiltIn();
+            builtinShort.BuiltInSort(data);
+            helper.LineSeperator();
         }
     }
 }

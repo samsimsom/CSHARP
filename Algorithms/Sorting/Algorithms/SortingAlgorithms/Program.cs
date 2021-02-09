@@ -11,7 +11,7 @@ namespace SortingAlgorithms
             var helper = new Helper();
             
             helper.CleanScreen();
-            WriteLine("Hello World!");
+            WriteLine("-- Sorting Algorithms --");
             helper.LineSeperator();
             
             // TODO: Make it random int generator.

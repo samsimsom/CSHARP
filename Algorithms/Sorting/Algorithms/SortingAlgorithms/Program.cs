@@ -1,5 +1,4 @@
 ﻿using System;
-using Exchange;
 using VisualUtils;
 using static System.Console;
 
@@ -14,32 +13,16 @@ namespace SortingAlgorithms
             helper.CleanScreen();
             WriteLine("Hello World!");
             helper.LineSeperator();
-
-            var exchange = new Exchage();
-
-            // Array
-            int[] data = new[] {1, 23, 44, 22, 76, 49, 85, 34, 2, 4, 8};
             
-            WriteLine("Array BEFORE Bubble Sorting :");
-            WriteLine(string.Join('-', data));
-            
-            // Bubble Sorting START
-            int i, j;
-            int dataLenght = data.Length;
-            for (j = dataLenght - 1; j > 0; j--)
+            // TODO: Make it random int generator.
+            int[] data = new[]
             {
-                for (i = 0; i < j; i++)
-                {
-                    if (data[i] > data[i + 1])
-                    {
-                        exchange.ExchageValues(data, i, i + 1);
-                    }
-                }
-            }
-            // Bubble Sorting END
+                1, 23, 44, 22, 76, 49, 85, 34, 2, 4, 8, 323, 68, 43, 795, 34,
+                35, 80, 67, 751, 57, 37, 96, 198, 5, 7, 36, 97, 63, 77, 59, 14
+            };
 
-            WriteLine("Arrat AFTER Bubble Sorting :");
-            WriteLine(string.Join("-", data));
+            var bubble = new Bubble();
+            bubble.BubbleSort(data);
 
         }
     }

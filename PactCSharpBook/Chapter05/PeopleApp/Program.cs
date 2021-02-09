@@ -128,6 +128,28 @@ namespace PeopleApp
             WriteLine(gunny.SaySomething("Blah Blash!"));
 
             WriteLine();
+
+            WriteLine(new string('-', 35));
+            int a = 10;
+            int b = 20;
+            int c = 30;
+
+            WriteLine($"Before: a = {a}, b = {b}, c = {c}");
+            bob.PassingParameters(a, ref b, out c);
+            WriteLine($"After: a = {a}, b = {b}, c = {c}");
+            WriteLine();
+
+            WriteLine(new string('-', 35));
+            var sam = new Person
+            {
+                Name = "Sam",
+                DateOfBirth = new DateTime(1972, 1, 27)
+            };
+
+            WriteLine(sam.Origin);
+            WriteLine(sam.Greeting);
+            WriteLine(sam.Age);
+
         }
     }
 }

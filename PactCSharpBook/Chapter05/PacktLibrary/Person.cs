@@ -5,7 +5,7 @@ using static System.Console;
 
 namespace Packt.Shared
 {
-    public class Person : object
+    public partial class Person : object
     {
         // FIELD & PROPERTY
         // ---------------------------------------------------------------------
@@ -35,6 +35,13 @@ namespace Packt.Shared
             HomePlanet = homePlanet;
             Instantiated = DateTime.Now;
         }
+
+        public Person(string initialName, DateTime initialDate)
+        {
+            Name = initialName;
+            DateOfBirth = initialDate;
+        }
+
         // ---------------------------------------------------------------------
 
 
@@ -85,6 +92,19 @@ namespace Packt.Shared
             return $"{text}";
         }
 
+        // ---------------------------------------------------------------------
+
+        public void PassingParameters(int x, ref int y, out int z)
+        {
+            // out parameters cannot have a default
+            // AND must be initialized inside the method
+            z = 99;
+
+            // increment each parameter
+            x++;
+            y++;
+            z++;
+        }
         // ---------------------------------------------------------------------
 
 

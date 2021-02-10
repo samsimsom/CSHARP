@@ -5,7 +5,7 @@ namespace Packt.Shared
 {
     public partial class Person
     {
-
+        // indexer
         public Person this[int index]
         {
             get

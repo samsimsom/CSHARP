@@ -137,6 +137,7 @@ namespace PeopleApp
             WriteLine($"Before: a = {a}, b = {b}, c = {c}");
             bob.PassingParameters(a, ref b, out c);
             WriteLine($"After: a = {a}, b = {b}, c = {c}");
+            
             WriteLine();
 
             WriteLine(new string('-', 35));
@@ -155,6 +156,72 @@ namespace PeopleApp
             WriteLine(sam.Origin);
             WriteLine(sam.Greeting);
             WriteLine($"Sam {sam.Age} yeas old!");
+            
+            WriteLine();
+
+            WriteLine(new string('-', 35));
+            sam.Children.Add(new Person { Name = "Charlie" });
+            sam.Children.Add(new Person { Name = "Ella" });
+
+            WriteLine($"Sam's first child is {sam.Children[0].Name}");
+            WriteLine($"Sam's second child is {sam.Children[1].Name}");
+
+            WriteLine($"Sam's first child is {sam[0].Name}");
+            WriteLine($"Sam's second child is {sam[1].Name}");
+
+            WriteLine();
+
+            WriteLine(new string('-', 35));
+            // -----------------------------------------------------------------
+            object[] passengers = {
+                new FirstClassPassenger { AirMiles = 1_419 },
+                new FirstClassPassenger { AirMiles = 12_234 },
+                new BusinessClassPassenger(),
+                new CoachClassPassenger { CarryOnKG = 25.7 },
+                new CoachClassPassenger { CarryOnKG = 0 },
+            };
+
+            // C# 8
+            foreach (object passenger in passengers)
+            {
+                decimal flightCost = passenger switch
+                {
+                    FirstClassPassenger p when p.AirMiles > 3500    => 1500M,
+                    FirstClassPassenger p when p.AirMiles > 1500    => 1750M,
+                    FirstClassPassenger _                           => 2000M,
+                    BusinessClassPassenger _                        => 1000M,
+                    CoachClassPassenger p when p.CarryOnKG < 10.0   => 500m,
+                    CoachClassPassenger _                           => 650M,
+                    _                                               => 800M
+
+                };
+
+                WriteLine($"Flight costs {flightCost:C} for {passenger}");
+            }
+
+            WriteLine();
+            
+            // C# 9
+            foreach (object passenger in passengers)
+            {
+                decimal flightCost = passenger switch
+                {
+                    FirstClassPassenger p => p.AirMiles switch
+                    {
+                        > 3500 => 1500M,
+                        > 1500 => 1750M,
+                        _      => 2000M
+                    },
+
+                    BusinessClassPassenger _                        => 1000M,
+                    CoachClassPassenger p when p.CarryOnKG < 10.0   => 500m,
+                    CoachClassPassenger _                           => 650M,
+                    _                                               => 800M
+                };
+
+                WriteLine($"Flight costs {flightCost:C} for {passenger}");
+            }
+            // -----------------------------------------------------------------
             WriteLine();
 
         }

@@ -6,6 +6,18 @@ namespace Packt.Shared
     public partial class Person
     {
 
+        public Person this[int index]
+        {
+            get
+            {
+                return Children[index];
+            }
+            set
+            {
+                Children[index] = value;
+            }
+        }
+
         public string FavoriteIceCream { get; set; }
 
         private string _favoritePrimaryColor;

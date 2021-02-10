@@ -145,10 +145,17 @@ namespace PeopleApp
                 Name = "Sam",
                 DateOfBirth = new DateTime(1972, 1, 27)
             };
+            
+            sam.FavoriteIceCream = "Chocolate Fudge";
+            sam.FavoritePrimaryColor = "Red";
+
+            WriteLine($"Sam's favorite ice-cream flavor is {sam.FavoriteIceCream}");
+            WriteLine($"Sam's favorite primary color is {sam.FavoritePrimaryColor}");
 
             WriteLine(sam.Origin);
             WriteLine(sam.Greeting);
-            WriteLine(sam.Age);
+            WriteLine($"Sam {sam.Age} yeas old!");
+            WriteLine();
 
         }
     }

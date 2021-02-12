@@ -10,6 +10,7 @@
 			"path": "Chapter05\\PacktLibrary9"
 		}
 	],
+	
 	"settings": {
 		"files.exclude": {
 			"**/.git": true,

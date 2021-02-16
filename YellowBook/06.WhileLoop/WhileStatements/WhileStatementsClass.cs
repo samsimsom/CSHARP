@@ -100,6 +100,34 @@ namespace WhileStatements
         }
 
         // ---------------------------------------------------------------------
+
+        // ---------------------------------------------------------------------
+
+        // isDigits
+        /*
+            Return true if text is contains one ore more digits
+            and nothing else, Otherwise return false.
+        */
+        public Boolean isDigits(string text)
+        {
+            Boolean allDigitsSoFar = (text.Length > 0);
+            int i = 0;
+
+            while (i < text.Length)
+            {
+                if (text[i] < '0' || text[i] > '9')
+                {
+                    return false;
+                }
+                i++;
+            }
+
+            return (text.Length > 0);
+        } 
+
+        // ---------------------------------------------------------------------
+
+
         
     }
 }

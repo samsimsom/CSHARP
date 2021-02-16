@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "06.WhileLoop\\WhileStatements"
+		},
+		{
+			"path": "06.WhileLoop\\InteractiveWhileLoops"
 		}
 	]
 }

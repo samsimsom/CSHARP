@@ -35,5 +35,28 @@ namespace Packt.Shared
             return Procreate(this, partner);
         }
 
+        public void DoSomethin()
+        {
+            var rndNnumber = new Random().Next(1, 6);
+            switch (rndNnumber)
+            {
+                case 1:
+                    WriteLine($"{rndNnumber}");
+                    break;
+                case 2:
+                    WriteLine($"{rndNnumber}");
+                    break;
+                case 3:
+                    WriteLine($"{rndNnumber}");
+                    break;
+                case 4:
+                    WriteLine($"{rndNnumber}");
+                    break;
+                case 5:
+                    WriteLine($"{rndNnumber}");
+                    break;
+            }
+        }
+
     }
 }

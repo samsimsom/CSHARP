@@ -28,6 +28,8 @@ namespace People
                       arg0: harry.Name,
                       arg1: harry.Children[0].Name);
             
+            harry.DoSomethin();
+            
         }
     }
 }

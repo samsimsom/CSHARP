@@ -10,8 +10,11 @@ namespace WhileLoop
             WriteLine("--- While Loop ---");
             WriteLine();            // Empty line
 
-            var interactiveWhileLoop = new InteractiveWhileLoop();
-            interactiveWhileLoop.InputIntInRange("Enter an Int", 0, 100);
+            // var interactiveWhileLoop = new InteractiveWhileLoop();
+            // interactiveWhileLoop.InputIntInRange("Enter an Int", 0, 100);
+
+            var andOr = new ANDaOR();
+            andOr.ShortCircuiting();
 
         }
     }

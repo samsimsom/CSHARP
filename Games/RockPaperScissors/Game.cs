@@ -37,8 +37,27 @@ namespace RockPaperScissors
                 var computerMove = (Move) random.Next(3);
                 WriteLine($"The computer chose {computerMove}");
                 WriteLine($"Player move {playerMove}");
-                
-                
+                switch (playerMove, computerMove)
+                {
+                    case (Move.Rock, Move.Paper):
+                    case (Move.Paper, Move.Scissors):
+                    case (Move.Scissors, Move.Rock):
+                        WriteLine("You Lose.");
+                        losses++;
+                        break;
+                    case (Move.Paper, Move.Rock):
+                    case (Move.Scissors, Move.Paper):
+                    case (Move.Rock, Move.Scissors):
+                        WriteLine("You Win.");
+                        wins++;
+                        break;
+                    default:
+                        WriteLine("This game was a draw.");
+                        break;
+                }
+                WriteLine($"Score: {wins} wins, {losses} losses");
+                WriteLine("Press enter to continue...");
+                ReadLine();
             }
             
         }

@@ -34,10 +34,37 @@ namespace Packt.Shared
         {
             return Procreate(this, partner);
         }
+        
+        // operator to "multiply"
+        public static Person operator *(Person p1, Person p2)
+        {
+            return Person.Procreate(p1, p2);
+        }
+        
+        // method with a local function
+        public static int Factorial(int number)
+        {
+            if (number < 0)
+            {
+                var eMessage = $"{nameof(number)} cannot be less than zero.";
+                throw new ArgumentException(eMessage);
+            }
+
+            return localFactorial(number);
+
+            int localFactorial(int localNumber) // local function
+            {
+                if (localNumber < 1) return 1;
+                {
+                    return localNumber * localFactorial(localNumber - 1);
+                }
+            }
+        }
 
         public void DoSomethin()
         {
             var rndNnumber = new Random().Next(1, 6);
+            Write("Do Something : ");
             switch (rndNnumber)
             {
                 case 1:

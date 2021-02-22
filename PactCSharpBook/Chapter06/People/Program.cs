@@ -108,22 +108,21 @@ namespace People
             // -----------------------------------------------------------------
             // seperator
             WriteLine(new string('-', 35));
-
+            
             var g1 = new GenericThing<int>();
             g1.Data = 42;
             WriteLine($"GenericThing with an integer: {g1.Process(42)}");
-
+            
             var g2 = new GenericThing<string>();
             g2.Data = "apple";
             WriteLine($"GenericThing with a string: {g2.Process("apple")}");
-
+            
             var g3 = new GenericThing<char>();
             g3.Data = 'A';
             WriteLine($"GenericThing with a char: {g3.Process('A')}");
             
             WriteLine(new string('-', 35));
             // -----------------------------------------------------------------
-
         }
 
         private static void Harry_Shout(object sender, EventArgs e)

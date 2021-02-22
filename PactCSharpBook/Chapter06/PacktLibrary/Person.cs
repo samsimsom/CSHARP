@@ -61,6 +61,33 @@ namespace Packt.Shared
             }
         }
 
+        public int MethodIWantToCall(string input)
+        {
+            return input.Length;
+        }
+
+        // delegate
+        public delegate int DelegateWithMatchingSignature(string s);
+        
+        //----------------------------------------------------------------------
+        // event delegate field
+        public EventHandler Shout;
+
+        // data field
+        public int AngerLevel;
+        
+        // method
+        public void Poke()
+        {
+            AngerLevel++;
+            if (AngerLevel >= 3)
+            {
+                Shout?.Invoke(this, EventArgs.Empty); // null check!
+            }
+        }
+        //----------------------------------------------------------------------
+        
+        
         public void DoSomethin()
         {
             var rndNnumber = new Random().Next(1, 6);

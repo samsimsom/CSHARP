@@ -116,5 +116,9 @@ namespace Packt.Shared
         {
             return Name.CompareTo(other.Name);
         }
+        
+        //----------------------------------------------------------------------
+
+        
     }
 }

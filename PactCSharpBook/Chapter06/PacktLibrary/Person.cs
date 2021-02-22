@@ -4,7 +4,7 @@ using static System.Console;
 
 namespace Packt.Shared
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         // FIELDS
         public string Name;
@@ -112,5 +112,9 @@ namespace Packt.Shared
             }
         }
 
+        public int CompareTo(Person other) // IComparable Implementation
+        {
+            return Name.CompareTo(other.Name);
+        }
     }
 }

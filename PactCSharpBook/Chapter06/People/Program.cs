@@ -49,6 +49,31 @@ namespace People
             // TESTS
             harry.DoSomethin();
             
+            // seperator
+            WriteLine(new string('-', 35));
+            
+            // Comparing object when sorting
+            Person[] people =
+            {
+                new Person {Name = "Simon"},
+                new Person {Name = "Jenny"},
+                new Person {Name = "Adam"},
+                new Person {Name = "Richard"}
+            };
+            
+            WriteLine("Initial List Of People : ");
+            foreach (var person in people)
+            {
+                WriteLine($"    {person.Name}");
+            }
+            
+            WriteLine("Use Person's IComparable implemantation to sort : ");
+            Array.Sort(people);
+            foreach (var person in people)
+            {
+                WriteLine($"    {person.Name}");
+            }
+
         }
         
         private static void Harry_Shout(object sender, EventArgs e)

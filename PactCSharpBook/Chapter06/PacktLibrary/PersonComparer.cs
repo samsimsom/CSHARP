@@ -4,8 +4,9 @@ namespace Packt.Shared
 {
     public class PersonComparer : IComparer<Person>
     {
-        public int Compare(Person? x, Person? y)
+        public int Compare(Person x, Person y)
         {
+            // TEST
             // Compare the Name Lengths
             int result = x.Name.Length.CompareTo(y.Name.Length);
             
